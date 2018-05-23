@@ -1,0 +1,962 @@
+---
+graphicspath: /Users/dmorales/Documents/Vision/VisionTemplate/inst/rmarkdown/templates/basic/resources/ #coloque la ruta del directorio donde tiene las imagenes
+headleft: vision.png #logotipo o texto extremo superior izquierdo del documento
+headright: visionrisk.png #logotipo o texto extremo superior derecho del documento
+footleft: "Nota Técnica Metodológica" #logotipo o texto extremo inferior izquierdo del documento
+headtitle: vision-white.png #imagen de la portada
+centertitle: visionrisk-white.png # imagen central de la portada
+subtituloportada: "Sistema de Alerta Temprana" 
+tituloportada: "Indicadores de Riesgo"
+output: VisionTemplate::basic
+---
+
+# Especificaciones Técnicas
+
+## Riesgo de liquidez
+
+### Definiciones básicas
+
+Ante de adentranos en el tema principal, vamos a realizar un repaso de algunas definiciones que usaremos para definir toda la maquinaria que esta detras del riesgo de liquidez.
+
+- __Banco__ : Los Bancos son empresas que se dedican a realizar operaciones financieras con el dinero procedente de sus accionistas y de los depósitos de sus clientes, de esta forma lo definine la Real Academia Española. A partir de ahora consideraremos las instituciones que se rigen conforme a lo establecido en las leyes generales de los bancos, llamados Bancos Universales y microfinancieros, los mismos están bajo la supervición de la SUDEBAN (Superintendencia de las Instituciones del Sector Bancario).
+
+- __Fondos Bancarios__ : Los bancos obtienen  
+
+- __SUDEBAN__ : Sus siglas significan Superintendencia del las Instituciones del Sector Bancario, esta institución tiene como objetivo principal regular y supervisar a las Instituciones del Sector Bancario, mediante la aplicación de las mejores prácticas nacionales e internacionales, que contribuyan con la estabilidad del sector y el desarrollo nacional. La página web de esta institución es [http://sudeban.gob.ve](http://sudeban.gob.ve).
+
+- __Riesgo__ : El riesgo lo definiremos como una probabilidad de que ocurra un hecho, o acontecimiento, que lleve a pérdidas materiales, como el resultado de operaciones que desarrolle el banco. 
+
+- __Gestión Integral de Riesgo__ : Estructura para aplicar políticas mediante alertas o mecanismos de reporte de acciones ejecutivas, con el objetivo principal de minimizar el riesgo utilizando recursos gerenciales. Las etapas principales son:
+
+    - __Mitigación__ : Medidas que deben tomarse para disminuir el impacto de fenómenos peligrosos.
+    - __Preparación__ : Acciones para asegurar la disponibilidad de recursos y a su vez la efectividad para enfrentar situaciones peligrosas.
+    - __Atención__ : Respuestas para proteger bienes ante la ocurrencia de un evento adverso.
+    - __Rehabilitación__ : Colocación en funcionamiento de los servicios afectados por un evento adverso. 
+    - __Recuperación__ : Paso donde se deben aplicar condiciones que reactiven los bienes afectados.
+    - __Evaluación__ : Estimar los riesgos.
+    - __Información__ : Generar y transmitir información oportuna según el plan de negocio establecido por el banco, donde se incluyan deficiencias o desviaciones, y sus respectivas correcciones.encontradas y su corrección.
+
+- __Liquidez__ : Cuando nos referimos a liquidez hablamos de la disposición que tiene un banco para satisfacer retiros efectuados por los depositantes y también la disposición de poder proporcionar préstamos a los clientes sin incurrir en faltas o pérdidas significativas.
+
+- __Riesgo de liquidez__ : Probabilidad que tiene un banco de no poseer los fondos necesarios para hacer frente a sus obligaciones. Éste se manifiesta como la incapacidad que tienen los bancos de comprar u obtener los fondos necesarios para cumplir con las obligaciones que se les presenten, sin incurrir a pérdidas inaceptables. Cuando un banco no está en capacidad de enfrentar sus obligaciones se dice que cae en __iliquidez__, usualmente cuando esto sucede se puede implementar vender las inversiones del banco o parte de su cartera de créditos para obtener efectivo de manera rápida, y así solventar el problema.
+
+- __Tesorería__ : La tesorería de un Banco es el área encargada de gestionar, organizar y controlar las operaciones que tienen que ver con los flujos de caja, o monetario. Tiene como función principal colocar en el mercado financiero os excedentes de dinero, o acudir al mercado a adquirir todo el dinero que necesite. Así podemos ver la tesorería como el conjunto de actividades relacionadas con la contabilidad del banco, revelando los pagos y los cobros. Toma medidas para que no se produzcan incumplimiento de pagos y los cobros para que siempre haya dinero. La tesorería consta de las siguientes áreas:
+
+    - __Front office__ : Es donde se realizan las negociaciones de operaciones, como mantener las operaciones con los clientes y aspectos comerciales que se deriven de éstas. Ofrecen servios de consultoría, de forma de guiar a los corporativos para la emisión, colocación y utilización de instrumentos y sus derivados.
+  
+    - __Middle office__ : Se encarga de la medición, análisis y gestión de los riesgos de mercado, liquidez y operación en función de las presupuestadas a ser realizadas por el área de ejecución y gestión de operaciones de tesorería. Para el cálculo de los riesgo utilizan metodologías como el Valor de Riesgo, llevan trabajos de auditoria y control interno. 
+  
+    - __Back office__ : Encargada de realizar aspectos operativos de la tesorería, como la liquidación, documentación, registro contable y conciliación de las operaciones, entre otros. También tienen a su cargo el adecuado manejo de bases de datos y registros informaticos, manteniendo y supervisando los sistemas.
+
+- __Activos líquidos__ : Cuando nos referimos a activos líquidos los definimos como aquellos que pueden convertirse en dinero en efectivo sin perder valor a corto plazo. Se les suele denominar __partidas equivalentes de efectivo__ a aquellas inversiones que son de gran liquidez y tienen con ellos riesgos pocos significativos. Otros activos líquidos son los llamados __pasivos de vencimiento inmediato__, estos son activos vencidos contraidos por el banco, por lo tanto, se pueden reclamar en cualquier momento.
+
+- __Razón de liquidez__ : Este tasa nos dice la capacidad que tiene el banco de realizar pagos a corto plazo, se define como la división, o cociente, de los activos líquidos y los pasivos de vencimiento inmediato.
+
+- __Operaciones contingentes__ : Las operaciones contingentes es una operación donde se involucran dos partes, el fiador y el deudor, estas suceden a raíz de eventos inesperados. Es un documentos irrevocable, que lleva la obligación del deudor a cumplir con el fiador de forma incondicional. Estas operaciones se dividen en dos:
+
+    - Operaciones contingentes activas:
+    - Operaciones contingentes pasivas:
+
+TODO: 
+
+__Pasivo contingente__ :
+Toda obligación posible, surgida a raíz de sucesos pasados, cuya existencia quedará confirmada sólo si llegan a ocurrir, o en caso contrario si no llegan a ocurrir, uno o más sucesos futuros inciertos que no están enteramente bajo el control de la entidad; o toda obligación presente, surgida a raíz de sucesos pasados, pero no reconocida en los estados financieros, ya que:
+(i) no es probable que por la existencia de la misma, y para satisfacerla, se requiera que la entidad tenga que desprenderse de recursos que incorporen beneficios económicos; o
+(ii) el importe de la obligación no puede ser medido con la suficiente fiabilidad.
+La entidad no debe proceder a reconocer contablemente una obligación de carácter contingente. Por el contrario, deberá informar acerca de la obligación en cuestión los estados financieros, salvo en el caso de que la salida de recursos que incorporen beneficios económicos tenga una probabilidad remota.
+
+__Activo contingente__ :
+La Norma define un activo contingente como un activo posible, surgido a raíz de sucesos pasados, y cuya existencia ha de ser confirmada por la ocurrencia, o en su caso por la no ocurrencia, de uno o más eventos inciertos en el futuro, que no están enteramente bajo el control de la entidad. Un ejemplo de activo contingente es una reclamación a través de procesos legales, que la entidad haya podido emprender, cuyo desenlace final sea incierto.
+La entidad debe abstenerse de reconocer cualquier activo de carácter contingente. No obstante, debe informar en los estados financieros sobre la existencia del mismo, siempre y cuando sea probable la entrada de beneficios económicos por esta causa.
+Cuando la realización del ingreso sea prácticamente cierta, el activo relacionado no es de carácter contingente, y su reconocimiento en los estados financieros resulta apropiado.
+
+- __Banda Temporal__ : Días continuos pertenecientes a un mismo intervalo de tiempo. Generalmente los intervalos que se usan son los siguientes:
+
+| Intervalos |
+|:-----------------------------------------:|
+| Del día 1 al 7 |
+| Del día 8 al 15 |
+| Del día 16 al último día del mes |
+| Del mes 2, de 31 a 60 días |
+| Del mes 3,  de 61 a 90 días |
+| Del trimestre siguiente, de 91 a 180 días |
+| Del semestre siguiente, de 181 a 360 días |
+| De 12 meses, de 361 a 720 |
+| Más de 12 meses, 721 o más días |
+
+- __Brecha de liquidez simple__ : Esta brecha se define como la diferencia entre los flujos de entrada y de salida con lo que podemos contar en una banda temporal. Entre los flujos de entrada se puede tener recuperación de activos, inversiones liquidas y disponibilidades; en los flujos de salida podemos tener pagos de pasivos y aumento de activos.
+
+Otra terminología que podemos conseguir es la siguiente: nos encontraremos con __calce de plazo__ cuando los flujos de entrada son iguales a los flujos de salida, y __descalce de plazo__, cuando los flujos no son iguales, en éste podemos tener un descalce de plazo positivo, en el cual los flujos de entrada son mayores que los flujos de salida y negativos en caso contrario.
+
+- __Brecha de liquidez acumulada__ : Es la suma acumulada de las brechas simples anteriores a la banda donde se este calculando y la de la misma banda.
+
+
+El Riesgo de Liquidez es un riesgo que enfrentan todas las instituciones financieras, en particular los Bancos, en economías inflacionarias el efecto de la iliquidez se puede manifestar a través de la incertidumbre presentada por el flujo de caja, dado que la dirección del mismo es incierto, solo en circunstancias excepcionales el exceso de flujos de caja salientes (egresos) sobre los entrantes (ingresos) darían paso a una situación muy particular ya que los egresos representarían una gran proporción de los activos, quedando la Institución Bancaria fuera de solvencia lo que implicaría recurrir a otros activos menos líquidos (liquidación inmediata de inversiones a mediano plazo), para afrontar la iliquidez de sus acreedores naturales (Cuenta Ahorrista, Cuenta Corrientistas), está sería una de las principales consecuencias de las denominadas __Corridas Bancarias__.  
+
+La estrategia del Riesgo de Liquidez se fundamenta en determinar en que grado la adquisición y mantenimiento de activos iliquidos es aceptable, considerando los términos de evaluación, haciendo énfasis en el corto plazo ya que un déficit de liquidez acarrearía una insuficiencia en las reservas estatutarias e índices de solvencia obligatorias bajo las normas de operación de las Instituciones Bancarias.
+
+## __Clases de Riesgo de Liquidez.__
+
+La Liquidez puede verse afectada principalmente por dos clases de eventos diferentes cuyos efectos coinciden en la iliquidez de las entidades, estas son:
+
++ __Riesgo de Liquidez de Fondos:__ Es el riesgo que corre la entidad al no ser capaz de hacer frente eficientemente a flujos de caja previstos e imprevistos, presentes y futuros, así como a aportaciones de garantías resultantes de sus obligaciones de pago, sin que se vea afectada su operativa diaria o su situación financiera.  
+
++ __Riesgo de Liquidez de Mercado:__ Es el riesgo de que una entidad no pueda compensar o deshacer fácilmente una posición a precios de mercado a causa de una insuficiente profundidad o de distorsiones en el mercado.
+
+En particular en este artículo nos referiremos al Riesgo de Liquidez de Fondos.  
+
+## __Principales Indicadores de Liquidez.__
+
+los Indicadores Contables Principales son:
+
++ __RALE__ o Razón de Liquidez Estructural
++ __RALEA__ o Razón de Liquidez Estructural Ajustada  
++ __RACOCAP__ o Razón de Concentración de Captaciones del Público
++ __GAP__ o Brechas de Liquidez
+
+Estos constituyen relaciones entre los *Activos Líquidos* y los *Pasivos de Vencimiento Inmediato*, en la República Bolivariana de Venezuela los mismos están determinados a través de las cuentas mencionadas en el artículo 15 y 16 de la Resolución 136.15 de la Superintendencia del Sector Bancario la cual se mencionan a continuación:
+
+#### Activos Líquidos.  
+
++ Disponibilidades.  
++ Banco Central de Venezuela.  
++ Bancos y Otras Instituciones Financieras del País.
++ Bancos y Corresponsales el Exterior.
++ Inversiones en Títulos Valores para Negociar.
+
+#### Pasivos de Vencimiento Inmediato.
+
++ Depósitos a la Vista.  
++ Depósitos de Ahorro.  
++ Depósitos a plazo hasta 30 días.
++ Depósitos a plazo.
+
+### __Razón de Liquidez Estructural__ RALE.  
+
+Este indicador se genera a través de un conjunto de razones de liquidez proyectadas, que relacionan partidas de activos y pasivos mencionadas supra,  y cuya proyección se hace para 7, 15, 30, 60 y 90 días de los saldos contables, con base en la siguiente fórmula:  
+
+$$\text{RALE}_n = \frac{\text{Activos Líquidos hasta n días}}{\text{Pasivos de Vencimiento Inmediato hasta n días}}*100$$    
+
+dónde;  
+
+$n=$ número de días para la proyección (7, 15, 30, 60 y 90).
+
+
+### __Razón de Liquidez Estructural Ajustada__ RALEA.
+
+Este indicador mide la capacidad que tiene el banco para cumplir con los retiros imprevisto que se pueden presentar en las cuentas corrientes, de ahorros, depósitos a plazos, y otras obligaciones a vencimiento dentro de los plazos establecidos, excluyendo los fondos comprometidos para cumplir con los requerimientos del encaje legal vigente.  
+
+$$\text{RALEA}_n = \frac{\text{Activos Líquidos Ajustados hasta n días}}{\text{Pasivos de Vencimiento Inmediato Ajustados hasta n días}}*100$$  
+
+Nótese: 
+
+Para los fines del cálculo de este indicador los activos líquidos deberán ser ajustados deduciendo el monto del encaje legal tomando en cuenta la proporción de reservas de encaje legal que se liberaría por los retiros estimados de depósitos, sobre la base de la experiencia histórica de situaciones de retiros masivos de captaciones del público, producto de eventos sistemáticos y no sistemáticos.
+
+También, los pasivos de vencimiento inmediato deberán ser ajustados considerando su porción volátil o susceptible de retiro, la cual será determinada mediante fluctuación esperada de las mismas a través de modelos estadísticos y/o estocásticos que simule la estimación de la volatilidad de dichos rubros.
+
+### __Razón de Concentración de Captaciones del Público__ RACOCAP.  
+
+la manera de calcular este indicador es a través del cociente de liquidez diario resultante de la sumatoria de los veinte (20) mayores saldos promedios de los últimos siete (7) días de depósitos que posean personas naturales o jurídicas en todos los productos masivos del banco en forma consolidada, dividido entre el total del saldo promedio de los últimos siete (7) días de la cartera de depositantes del banco.  
+
+$$\text{RACOCAP} = \frac{\text{(20) Mayores Saldos Promedios Últimos siete (7) días de Depósitos}}{\text{Saldos Promedios Últimos siete (7) días de la Cartera de Depositantes}}*100$$  
+
+### __Brechas de Liquidez__ GAP.
+
+El análisis de las brechas de liquidez tiene como propósito establecer a partir de los vencimientos de los activos y pasivos tanto contractuales como esperados, el nivel de suficiencia de recursos líquidos, una formulación sencilla viene dada de la siguiente manera:  
+
+$$\text{GAP}_n = \sum \text{Flujos de Caja Entrantes} - \sum \text{Flujos de Caja Salientes}$$  
+
+Nótese:  
+
+La parte que se refiere a los egresos (flujos de caja salientes) se puede dividir en una porción que depende de los compromisos fijos o contractuales que vienen dado de forma cierta denominada *porción estable* y otra que depende de los escenarios esperados asociados eventos susceptibles de medida por modelos probabilísticos, estocásticos o estadísticos que se denomina *porción volátil*  
+
+### De La Porción Volátil.  
+
+La volatilidad de los depósitos está definida como un __VaR__ (Value at Risk por sus siglas en inglés o Valor en Riesgo en idioma español), cuya medida depende de un nivel de confianza del 95% y 99% en un período de liquidación de las posiciones de 7 días. Las Distribuciones Probabilísticas que dan paso al cálculo del VaR son ajustadas a través de pruebas estadísticas especiales denominadas *Pruebas de Bondad de Ajuste* con una muestra de 252 observaciones de frecuencia diaria.  
+
+En todo caso cuando se trate de bancos con información de sus depósitos inferior al período establecido, la porción volátil de los depósitos no podrá ser menor al 10% del saldo contable al día anterior a la estimación.  
+
+la variabilidad de los depósitos se hace a través del cálculo de sus rendimientos que en su versión más sencilla tenemos lo que se denomina __Retorno Simple__:  
+
+$$\begin{array}{rl}
+R_{t}(n) &\displaystyle= \left(1+R_{t}\right) \left(1+R_{t-1}\right) \left(1+R_{t-2}\right) \ldots \left(1+R_{t-n+1}\right) -1\\
+&\displaystyle= \frac{P_t}{P_{t-1}} \frac{P_{t-1}}{P_{t-2}} \ldots \frac{P_{t-n+1}}{P_{t-n}}-1\\
+&\displaystyle= \frac{P_{t}-P_{t-n}}{P_{t-n}}
+\end{array}$$
+
+considerando que los intereses y la tasa de cambio es considerada continuamente compuesta podemos expresar los retornos en términos de su serie de tiempo diferenciada logaritmica:
+
+$$Y_{t}(n)=\ln(1+R_{t})=\ln \left(\frac{P_{t}}{P_{t-1}}\right)$$
+
+Donde;  
+
+$X_t$: Es el saldo de Pasivo sin vencimiento contractual en el período o día $t$.  
+$X_{t-1}$: Es el saldo del Pasivo sin Vencimiento Contractual en el período o día $t-1$.   
+
+La razón fundamental por el cual el VaR se calcula a través de los rendimientos es porque estos tienen propiedades estadísticas que resultan más manejables a la hora de una estimación o pronóstico ya que son Estacionarios y ergódicos.  
+
+luego, utilizando los resultados de las Pruebas de Bondad de Ajuste se calcula el VaR con un $\alpha$% de confianza y se aplica la siguiente forma para calcular la porción volátil:  
+
+$$P_{VaR_{\alpha}} = S_n * VaR_{\alpha} * \sqrt{t}$$  
+
+Donde;  
+
+$t=$ Período de liquidación  
+$S_n=$ Saldo al día $n$, es decir, el último saldo real de los depósitos  
+$VaR_{\alpha}=$ Valor a Riesgo asociado a nivel de confianza calculado bajo la distribución que resulte de las pruebas de bondad de ajuste
+
+### Escenarios de la Bandas de Liquidez.
+
+#### Escenario Contractual.  
+
+El escenario contractual se construye tomando en cuenta las fechas de recuperación de activos o vencimiento de pasivos contractualmente definidas, con la finalidad de ubicar los saldos de cada rubro del activo y del pasivo en bandas temporales, según su plazo residual de exigibilidad o de vencimiento, respectivamente.
+
+En el caso de productos con plazo indeterminado, es decir, sin fecha de vencimiento contractual, como son los depósitos a la vista y en caja de ahorro, es recomendable que su distribución en las bandas de tiempo, se realice utilizando metodologías basadas en el análisis de su volatilidad, estimando la caída máxima esperada considerando un determinado nivel de confianza.
+
+Luego de haber distribuido los saldos en las distintas bandas de tiempo, se procede a generar, para cada banda, la diferencia entre las partidas de activo y pasivo calculando de esta manera la brecha de liquidez.
+
+Con base en los montos de las brechas de liquidez calculados para cada banda de tiempo, se procede a realizar el cálculo de la brecha acumulada, a través de la acumulación de las brechas liquidez individuales. De esta manera, la brecha acumulada para una determinada banda de tiempo se calcula sumando a la brecha liquidez correspondiente a dicha banda, las brechas simples de las bandas de tiempo precedentes, representando el total acumulado de diferencias entre partidas de activo y pasivo hasta la banda en cuestión.
+
+Si la brecha de liquidez acumulada a un determinado plazo es negativa, es decir, si el saldo acumulado de diferencias entre activo y pasivo es deficitario, este monto es considerado como liquidez en riesgo.
+
+Por tanto, el análisis de brechas de líquidez requiere que la Institución Financiera adopte políticas en relación a la fijación de límites de exposición para la brecha de liquidez acumulada negativa, a nivel de moneda y en forma consolidada, pudiendo establecerse como un monto máximo expresado en unidades monetarias y/o como un porcentaje máximo en relación a los activos; los importes en exceso sobre dichos límites serán considerados como “Liquidez en Riesgo”. No obstante esta recomendación, es importante reconocer que el establecimiento de límites a la brecha de liquidez acumulada negativa, no necesariamente debe implicar la ausencia de posiciones de liquidez en riesgo, pues bien podría admitirse un cierto nivel de tolerancia.
+
+De manera complementaria, también podrían establecerse límites para la relación entre activos y pasivos, lo que implicaría de antemano la aceptación o no de la existencia de liquidez en riesgo.
+
+Los límites adoptados internamente por la Institución Financiera deben ser el resultado de un análisis riguroso y de estudios especializados llevados a cabo por la unidad para estos fines.
+
+#### Escenario Esperado.
+
+Como se ha manifestado, en el escenario contractual no se toman en cuenta comportamientos que no sean aquellos puramente contractuales. Un ajuste al escenario contractual es el que corresponde al escenario esperado.
+
+En el escenario esperado se incorporan renovaciones, pre-cancelaciones, morosidad, y cualquier otro tipo de comportamientos que normalmente se registran en los diferentes rubros del balance general de una Institución Financiera. Para ello se deben estimar los porcentajes o proporciones de ocurrencia de estos casos, con base en estudios especialmente desarrollados por la Institución Financiera para realizar estos cálculos, en función a la propia historia de la entidad contenida en sus bases de datos. Los estudios podrían considerar por ejemplo, el cálculo de la recurrencia de renovaciones de depósitos a plazo fijo, si éstos revelaran por ejemplo, que normalmente, para un determinado nivel de confianza, las renovaciones representan un 80% de los casos, los flujos de salida de fondos en las bandas de tiempo correspondientes a este producto, deberían ajustarse conforme a esta estadística histórica; de este modo, la salida de recursos estimada correspondería únicamente al 20% de los casos restantes. Las estimaciones pueden realizarse en forma global, aplicable a todas las bandas de tiempo o, alternativamente, en forma separada para cada banda de tiempo.
+
+Se debe señalar en este caso, el escenario de liquidez no es tan desfavorable como en el escenario contractual, en razón a que únicamente en dos bandas temporales (hasta 60 y 90 días) existe posición de liquidez en riesgo. Esto se debe a la incorporación del porcentaje de renovación de los depósitos a plazo.
+
+#### Escenario Estresado.  
+
+Es recomendable que en el análisis de liquidez se generen, además, escenarios de estrés o simulaciones de posibles situaciones extremas con corridas de fondos, asumiendo, por ejemplo, que todos los depósitos a la vista y en cuentas de ahorro pudieran salir de la Institución Financiera en una o dos semanas, o en el primer mes, suponiendo además que no ocurran renovaciones de depósitos a plazo. Estos escenarios pondrían a prueba la situación de liquidez de la Institución Financiera bajo condiciones extremas, no siendo aplicable el análisis de volatilidad recomendado para situaciones normales.  
+
+Las cantidades calculados para las posiciones de liquidez en riesgo ante situaciones extremas, posibilitan a la Institución Financiera estimar la cuantía de recursos que necesitaría para atender emergencias derivadas de esas eventualidades. Con base en dichas estimaciones se debería planificar fuentes alternativas de financiamiento y estructurar un Plan de Contingencias.  
+
+### Monitoreo del Riesgo de Liquidez.  
+
+Se entiende por monitoreo del riesgo de liquidez, al proceso de evaluación continua de las posiciones de riesgo de liquidez asumidas por la Institución Financiera, así como al funcionamiento de todo el sistema de gestión del riesgo de liquidez. Este proceso ayuda a detectar y corregir anticipadamente las deficiencias que pudieran existir en la asunción de políticas, el desarrollo de procesos y procedimientos, y cualquier otro aspecto relacionado con la gestión del riesgo de liquidez.
+
+El alcance del monitoreo abarca todos los aspectos de la gestión del riesgo de liquidez, en un ciclo dinámico acorde con la naturaleza del negocio y el volumen, tamaño y complejidad de las operaciones de la Institución Financiera.
+
+En el marco de la fase de monitoreo del riesgo de liquidez, el Comité de Riesgos podrá solicitar las actas de las reuniones de los otros comités, creados en la Institución Financiera (ALCO, de Crédito, de Tesorería e Inversiones, y otros), con el objeto de verifi car que las recomendaciones e instrucciones emanadas del Comité de Riesgos, con relación al riesgo de liquidez, hayan sido incorporadas por las áreas comerciales o de negocios. Los exámenes practicados por la Unidad de Auditoria Interna podrán verificar el grado de implementación y cumplimiento de tales recomendaciones.  
+
+### Divulgación de la Información y Comunicación Oficial del Riesgo de Liquidez
+
+La fase de divulgación constituye el último eslabón del proceso de gestión del riesgo de liquidez, y consiste en la distribución de información apropiada sobre el riesgo de liquidez al Directorio, Gerencia, personal, así como interesados externos tales como: clientes, proveedores, reguladores y accionistas. Esta información puede ser interna o externa, y debe incluir información financiera y operativa.
+
+Con relación a la divulgación externa, la Institución Financiera debe ajustarse al marco regulatorio existente, respetando las limitaciones y restricciones si las hubiera.
+
+En cuanto se refiere a la divulgación interna, ésta dependerá de las políticas adoptadas internamente por la Institución Financiera para este propósito específico, debiendo observar, al menos, los siguientes aspectos:
+
++ El principio fundamental es que todos los funcionarios de la Institución Financiera deben conocer la matriz de riesgos institucional. Asimismo, deben conocer el grado de exposición de la entidad a los distintos riesgos, entre ellos el de liquidez.
+
++ El grado de profundidad del proceso de divulgación de la matriz de riesgos, debe variar
+según las funciones y grado jerárquico de los receptores.
+
++ La definición expresa del contenido y la periodicidad del flujo de la información.
+El establecimiento de mecanismos de verifi cación del cumplimiento de las políticas de
+divulgación.
+
+La gestión de riesgos encuentra en la información, un elemento clave para estructurar un buen sistema de administración de riesgos y alcanzar los objetivos de minimización de pérdidas para la entidad.
+
+En el caso específico del riesgo de liquidez, el sistema de información debe ser lo sufi cientemente flexible para brindar toda la información que se requiera para cumplir con todas las etapas de la gestión de riesgos: identifi car, medir, monitorear, controlar, mitigar y divulgar el riesgo de liquidez. Así por ejemplo, como se pudo apreciar en la sección sobre metodologías, el análisis de brechas de liquidez requiere la clasifi cación de activos y pasivos por bandas de renovación o vencimiento; por lo tanto, el sistema de información de la EIF debe tener la capacidad de procesar automáticamente la información, de manera de clasifi carla por bandas, con base en una fecha de corte o de análisis determinado.
+
+Dicho sistema debe permitir, además, incorporar los porcentajes de renovación, precancelación, morosidad, etc. que la Institución Financiera considere relevantes para generar el escenario de liquidez esperado, así como los escenarios de estrés. Asimismo, el sistema debe estar en capacidad de incorporar metodologías estadísticas u otras necesarias para realizar estimaciones, proyecciones, cálculo de la porción estable y volátil de los productos de plazo indeterminado, ejercicios de simulaciones de escenarios, y otras relacionadas con la medición del riesgo de liquidez. El sistema de información debe generar reportes de exposición al riesgo de liquidez para ser analizados por el Comité de Riesgos.
+
+El sistema de información debe permitir el almacenamiento sistematizado de las bases de datos y de los reportes generados, y debe contar con mecanismos de seguridad y niveles de acceso apropiados para un óptimo funcionamiento del mismo.
+
+Debido a la complejidad de los cálculos que podrían realizarse y al volumen de transacciones que podría existir en el procesamiento de la información para la gestión del riesgo de liquidez, el sistema de información de la Institución Financiera debe contener mecanismos de validación de la información y de los procesos a ejecutarse, a fin de minimizar cualquier tipo de error que pudiera presentarse en el manejo operativo del mismo.
+
+En Venezuela la divulgación y comunicación oficial de los riesgos en particular del riesgo de liquidez está regulada por la disposición 136.15 la cual indica que la información debeb ser divulgada a través de un mecanismo electrónico denominado __Archivo de Transmisión 28__ o el __AT28__, el cual contiene información detallada de todos los aspectos del riesgo de liquidez como los ratios de liquidez, las brechas Contractuales, Esperadas y Estresadas así como la razon de riesgo de liquidez y su distribución proporcional con respecto a la cartera.
+
+El ente que centraliza la información es la __Superintendencia de las Instituciones del Sector Bancario__ (SUDEBAN) a través del __Sistema de Información Financiera__ (SIF).
+
+### Del Cálculo de las Bandas de Liquidez  
+
+Las bandas de liquidez o GAP de liquidez es una estimación de la estructura del riesgo de liquidez proyectada a lo largo de un período con el objeto de realizar una estimación fija del mismo.
+
+para cálcularla debemos pasar por un proceso estádistico que implica un conjunto de contrastes de hipótesis con el fin de establecer o determinar la distribución probabilistaca asociada a la población tipo, $VaR$ y $TVaR$.
+
+## Proceso de Bondad de Ajuste.  
+
+### Representación de los Datos y el Modelo.  
+
+Una de las fases fundamentales para garantizar el inicio de la supervisión en materia estadística es el control de la calidad de los datos. Los mismos deben ser congruentes, no contar con repeticiones abruptas ni signos de manipulación o intervención; su hallazgo puede ser síntoma de sesgo de los datos, lo que inutilizaría los modelos de estimación y control.
+
+Particularmente, se debe observar la Distribución de Frecuencia de los datos y su respectivo gráfico pues de esta manera el especialista podría detectar cualquier anomalía a priori en el justo momento de entrega de los datos.   
+
+### Contrastes de Hipótesis.  
+
+En esta sección aborda lo concerniente a los contrastes de hipótesis, entendiendose como un sistema de toma de decisiones entre una variedad de métodos estadisticos. Para la siguientes pruebas se definen las hipótesis a contrastar:  
+
+$H_0:$La Data proviene de una Población con Distribución Probabilística Definida.  
+$H_1:$La Data no proviene de dicha Población.
+
+### Prueba de Kolmogorov-Smirnov
+
+La prueba de Kolmogorov-Smirnov se utiliza para decidir si una muestra proviene de una población con una distribución específica. Puede aplicarse tanto para datos discretos (recuento) y continuos agrupados, así como para las variables continuas. Se basa en una comparación entre la función de distribución empírica (FDE) y la teórica definida como:
+
+$$F(x)=\int_{\alpha}^{x}f(y;\theta)dy$$  
+donde $f(y;\theta)$ es la función de densidad teórica y 
+La FDE viene definida como:
+dados los datos ordenados $x_1, x_2, ..., x_n$ luego $F_n(x_i)=\frac{N_i}{n}$ donde $N_i$ es el número de puntos inferior a $x_i$ ($x_i$ están ordenados de menor a mayor valor). Esta es una función de escalera que aumenta en 1/n en el valor de cada punto de datos ordenados.
+El Estadístico de Contraste utilizado es:   
+
+$$D_n= max|F(x_i)-F_n (x_i ) |$$
+
+Es decir, el extremo superior entre las diferencias de valor absoluto entre FDE y la funcion de distribución teórica. La hipótesis con respecto a la forma de distribución se rechaza $H_0$ si el estadístico de prueba, $D_n$, es mayor que el valor crítico obtenido a partir de una tabla, o lo que es lo mismo, si el $p$ valor es menor que el nivel de significación.
+
+
+### Prueba de Anderson-Darling  
+
+Esta Prueba es similar a la prueba de Kolmogorov-Smirnov, pero tiene un estadístico de contraste diferente para evaluar la cercanía o nivel de representatividad de un modelo. La función de contraste es la siguiente:  
+
+$$A^2=n\int_{t}^{u}\frac{[F_n(x)-F_n^{*}]^2}{F^*(x)[1-F^*(x)]}f^*(x)dx$$  
+
+simplificando y resolviendo la integral se obtiene:  
+
+$$A^2=-nF^*(u)+n \sum_{j=1}^{k}[1-F_n(y_j)]^2\{ln[1-F^*(y_j)]-ln[1-F^*(y_j+1)]\}+ n\sum_{j=1}^{k}F_n(y_j)^2[lnF^*(y_j+1)-lnF^*(y_j)]$$  
+
+si $u$ es un número finito entonces el valor crítico es más pequeño.  
+
+### Prueba de la Chi-Cuadrado  
+
+La prueba Chi-cuadrado $\chi^2$ es la prueba de bondad de ajuste más antigua que existe, formulada por __Karl Pearson (1900)__. Puede ser pensada como una comparación formal de un histograma con la densidad ajustada.
+Una característica atractiva de la prueba de bondad de ajuste chi-cuadrado $\chi^2$  es que se puede aplicar a cualquier distribución univariante para la cual se pueda calcular la función de distribución acumulativa, y aunque usualmente se aplica a los datos agrupados, es decir, datos puestos en clases, no es realmente una restricción, ya que para los datos no agrupados se puede simplemente calcular una tabla de histograma o la frecuencia antes de generar la prueba de chi-cuadrado; el valor de la prueba estadística de chi-cuadrado depende de cómo se agrupen los datos.  
+
+Por otra parte, esta prueba se puede aplicar a distribuciones discretas como continuas.  
+
+Por la forma de calcular la prueba de bondad de ajuste chi-cuadrado $\chi^2$, los datos se dividen en “k” contenedores y el estadístico de prueba se define de esta manera:
+$$\chi^2=\sum_{i=1}^{n}\frac{(O_i-E_i)^2}{E_i}$$ 
+Donde $O_i$ es la frecuencia observada para el intervalo $i$, y $E_i$ es la frecuencia esperada para el intervalo $i$. La frecuencia esperada se calcula por la función de distribución acumulativa. Este estadístico se distribuye como una variable aleatoria $\chi^2$ con $k-p-1$ grados de libertad (p es el número de parámetros estimados por los datos de la muestra). La hipótesis de que los datos provienen de una población con la distribución especificada es aceptado si $\chi^2$ es más baja que la función de percentiles chi-cuadrado con $k-p-1$ grados de libertad y un nivel de significación de $\alpha$. La prueba de chi-cuadrado es muy sensible a la elección de los contenedores o intervalos.
+
+
+### Prueba de la Función de Máxima Verosimilitud  
+
+El método de máxima verosimilitud se utiliza en el contexto de la inferencia estadística para estimar los parámetros de una distribución. Se tiene una variable aleatoria con una Función de Densidad conocida $f(x,\theta)$ que describe un carácter cuantitativo de la población. Se debe estimar el vector de parámetros desconocidos y constante $\theta$ según los datos de muestreo: $x_1,x_2,x_3,…,x_n$.  
+
+La estimación de máxima verosimilitud comienza con la expresión matemática conocida como una función de probabilidad de los datos de la muestra. En términos generales, la probabilidad de un conjunto de datos es igual a la probabilidad de obtener ese conjunto particular de datos dado el modelo elegido. Esta expresión contiene los parámetros desconocidos. Esos valores del parámetro que maximicen la probabilidad de la muestra se conocen como las estimación máximo verosímil (MLE). La función de verosimilitud se define como:  
+
+$$L(x_1, x_2, x_3, ..., x_n, \theta)=\prod_{i=1}^{n}f(x_i, \theta)$$  
+El MLE consiste en encontrar aquel $\theta$ que maximiza $L(x_1,x_2,x_3,…,x_n,\theta)$ o su función logarítmica. Se pueden emplear métodos de análisis matemático (derivadas parciales e igualarlas a cero) cuando la función de verosimilitud es bastante simple, pero muy a menudo se optimiza $L(x_1,x_2,x_3,…,x_n,\theta)$  usando métodos iterativos. El MLE tiene varias propiedades estadísticas y ventajas. Por ejemplo, en el caso de una distribución gamma, la función de probabilidad es:  
+
+$$L(x_1, x_2, x_3, ..., x_n, \alpha, \lambda)=\prod_{i=1}^{n}f(x_i, \alpha, \lambda)\\ \prod_{i=1}^{n}\frac{\lambda^\alpha}{\Gamma(\alpha)}x_i^{\alpha-1}e^{-\alpha.x_i}=(\frac{\lambda^\alpha}{\Gamma(\alpha)})^n (\prod_{i=1}^{n}x_i)^{\alpha-1}e^{-\lambda\sum_{i=1}^{n} x_i} $$
+y su logaritmo es:  
+ 
+ $$log(L)=n\alpha log(\lambda)-n log(\Gamma(\alpha))+(\alpha-1)\sum_{i=1}^{n}log(x_i)-\lambda\sum_{i=1}^{n}x_i$$
+
+### De la Selección del Modelo.  
+
+Todas las herramientas mostradas en los apartados anteriores tienen como finalidad dar una idea del comportamiento de la variable en cuestión con el objeto de hacer la __Selección del Modelo__. Para ello, se desarrolló un procesos automatizado en el cual se hace una aproximación de un Score o puntaje, dependiendo del grado de ajuste que tenga cada modelo teórico definido a través de indicadores especiales, como los resultados de las __Pruebas de Bondad de Ajuste__ definidos en este documento; en particular el mejor modelo será aquel que cumpla con las siguientes características:  
+
++ El que tenga el menor valor en la prueba de __Kolmogorov-Smirnov__.  
++ El que tenga el menor valor en la prueba de __Anderson-Darling__.    
++ El que tenga el menor valor en la prueba de $\chi^2$.    
++ El mayor $p$-valor en la prueba de $\chi^2$.  
++ El Mayor valor de la __Función de Máxima Verosimilitud__.   
+
+A tráves de los siguientes ejemplos recorreremos la batería de Pruebas Estadísticas con las Distribuciones de Probabilidades de Pérdidas asociadas a los procesos de caracterización matemática soportado por la __Teoría Matemática del Riesgo__.  
+ 
+ 
+### R y el Paquete __rriskDistribution__
+
+El paquete ```rriskDistributions``` provee una colección de funciones para la estimación de parámetros de distribuciones discretas y continuas relacionadas con distribuciones de pérdida y con la teoría matemática del riesgo.  
+
+la misma provee pruebas paramétricas de bondad de ajuste de distribuciones probabilísticas dado los datos o sus cuantiles. El algoritmo ajusta distribuciones sin necesidad de la sistencia del usuario y sin especificar ninguna familia de distribuciones.  
+## Var
+
+La probabilidad basada en modelos provee una descripción de la exposición al riesgo, el nivel de exposición de riesgo es frecuentemente descrito por un número o un pequeño conjunto de ellos; estos números son funciones (medidas) sobre el modelo elegido que muy frecuentemente son llamados __Indicadores Claves de Riesgo__. Estos indican el grado de materialización de un aspecto del riesgo en términos de las definición de un evento a caracterizar. En particular, se define el __VaR__ o Valor a Riesgo como el percentil de la Distribución Agregada de Riesgo (Función de Distribución Acumulada), cuya interpretación es observada como __la posibilidad de obtener un resultado adverso__; este puede ser expresado a través del __VaR__ con un particular nivel de probabilidad. El __VaR__ en el área financiera suele ser utilizado para la determinación de un Monto o Nivel de Capital requerido para soportar dichos resultados adversos.  
+
+Adicionalmente, definimos el Tail-Value-at-Risk __TVaR__ o __VaR de Cola__, utilizada en varias áreas y nombrada de distintas maneras, entre las más frecuentes: Conditional-Value-at-Risk __CVaR__ o __VaR Condicional__, Conditional Tail Expectation __CTE__ y Expected Shortfall __ES__ o Expectativa a Corto Plazo. 
+
+### El VaR como Medida Estandar de Medición de Riesgo.
+
+El __VaR__ o Valor en Riesgo ha resultado ser el estándar de medición para evaluar la exposición de Riesgo. En términos generales, el __VaR__ es el monto de capital requerido para asegurar con cierto grado de certeza que la institución en cuestión no resulte técnicamente insolvente. Este grado de certeza es arbitrario y por lo general se pasea entre el 95% y el 99%.  
+
+En esta oportunidad se considera la Variable Aleatoria $X_j$ que representa las posibles pérdidas asociadas al Riesgo de Liquidez para una cuenta o partida en particular; luego, el total de los agregados diarios es la suma de todas las pérdidas, esto es:   
+
+$$X=X_1+X_2+...+X_n$$  
+
+Además, se enuncia un conjunto de propiedades que garantizan la coherencia de las medidas de riesgo.  
+
+Definición:  
+
+Una __Medida Coherente de Riesgo__ $\rho(X)$ es cualquier función que cumpla con las siguientes propiedades:  
+
+Sea $X$ y $Y$ 2 Variables Aleatorias de Pérdida. Entonces:
+
+1) __Subaditividad__: $\rho(X+Y) \leq \rho(X)+\rho(Y)$.  
+2) __Monotonía__: sí $X \leq Y$ para todos los posibles resultados  entonces $\rho(X)\leq\rho(Y)$.  
+3) __Homogeneidad Positiva__: para cualquier constante positiva $c$, $\rho(cX)=c\rho(X)$.  
+4) __Invarianza en Traslación__: para cualquier constante positiva $c$, $\rho(X+c)=\rho(X)+c$.     
+
+
+### __Principio de la Desviación Estandar.__  
+
+El Principio de la Desviación Estándar es una medida de incertidumbre de una Distribución de Probabilidad. Si se tiene una Distribución de Probabilidad de Pérdida con media $\mu$ y desviación estándar $\sigma$, la cantidad $\mu+k\sigma$ donde $k\in \mathbb{R}$ es una medida de riesgo, el coeficiente $k$ es seleccionado dependiendo de la __Asimetría y Curtósis__ de la Distribución en cuestión; en esta definición se encuentra la clave detrás del __VaR__. 
+
+ahora definiremos matemáticamente el __VaR__ y veremos su formulación asociado con algunas Distribuciones de Probabilidad notables.
+
+#### Valor en Riesgo (VaR)    
+
+Supongamos que el valor de un portafolio hoy es denotado $V_0$ y en el tiempo $t$, es $V_t$. Se define que la distribución de pérdida será igual a la distribución de las diferencias
+
+$$X_t = V_0 - V_t$$
+
+Nótese que la variable está definida del punto de vista de la pérdida, lo que implica que un valor negativo en esta variable significa una ganancia o lucro probable.
+
+Siendo $X$ una Variable Aleatoria de Pérdida, el Valor en Riesgo de $X$ al nivel de certeza del $p$% se denota $VaR_{p}(X)$ y es el $p$ Percentil de la Distribución de Pérdida Asociado a $X$ o lo que es lo mismo del punto de vista analítico 
+
+$$\mathbb{P}(X>x_p)=p$$    
+
+Alternativamente, se puede usar la función de probabilidad acumulada de $X$, se denota $F_X$, donde el VaR de nivel de confianza $p$ es  
+
+$$F_{X}^{-1}(1-p)$$
+
+En la práctica de la formulación de riesgo del sector bancario es común encontrar el VaR definido en términos de $1-p$, por ejemplo 95% de confianza, 99% de confianza, etc..
+
+El cálculo del VaR requiere la cuantificación de la distribución de los retornos. Uno de los enfoques es asumir que los retornos de un Activo (o Pasivo) en particular sigue una distribución de probabilidad específica, por ejemplo la distribución normal este acercamiento es el denominado como " __Paramétrico__ ", asímismo, requiere asumir parámetros necesarios que caracterizan los datos dentro de la distribución.  
+
+Otro de los acercamientos asume el cálculo a través de la proyección de la desviación estándar de los retornos empíricos para ajustar la volatilidad del indicador a través de la historia del mismo, por eso dicho acercamiento se denomina " __Histórico__ ", una de las desventajas de este método es que se necesita información "suficiente", para poder ajustar o sintonizar razonablemente dicha estimación. es de notar que detrás de este concepto se asume la misma ponderación o importancia al peso de todos los datos evaluados es decir la ponderación de se da de manera uniforme.  
+
+<img class="img-responsive" style="margin-left: auto;margin-right:auto;" src="/img/corpus/ConocoPhillipsReturnsVaR.png" alt="">
+
+*La gráfica corresponde a el cálculo de la volatilidad asociada al VaR de los retornos de las acciones de Conoco Phillips desde el 01-07-2007 hasta el 31-12 2010, por el método Histórico, en la misma se observa que dónde mayor número de períodos de la volatilidad fueron tomados en cuenta (__RollSD52__), la volatilidad estimada resultó más sintonizada o convergente.*   
+
+Sin embargo, el método antes mencionado podría no sustentar las estimaciones en economías inflacionarias porque perdería vigencia rápidamente ya que obviamente los datos más antiguos sufrirían un devaluación que no estaría considerada en el modelo. Esta pertinente observación da paso a otro enfoque del cálculo y pronóstico del VaR a través de la suavización exponencial utilizando un modelos de serie de tiempo __EWMA__ Exponentially Weighted Moving Average o Promedios Móviles Exponencialmente Pesados, cuya formulación de la volatilidad viene dado por:
+
+$$\hat{\sigma}_n^2 = \lambda \hat{\sigma}_{n-1}^2 + (1 - \lambda) u_{n-1}^2$$  
+
+dónde:
+
+ $\hat{\sigma}_{n-1}^2$ es la varianza estimada en el período $n-1$
+ 
+ $u_{n-1}^2$ es el cuadrado de los retornos del período $n-1$
+ 
+ $\lambda$   es una constante entre 0 y 1.
+ 
+la idea de la selección del modelo exponencial es seleccionar la constante $\lambda$ que minimice el error cuadrático medio entre la volatilidad estimada y la volatilidad observada.
+
+Siguiendo este orden de ideas también podemos estimar la volatilidad asociada al VaR estableciendo un modelo de series de tiempo general donde la varianza del modelo sea dinámica (no necesariamente exponencial) pero que cuya variabilidad se pueda expresar en función del tiempo. dicho modelo es denominado __GARCH__ por sus siglas en inglés, son los Autoregresivos de Heterocedasticidad Condicional Generalizados, presentados por Bollerslev en 1986. Este modelo de serie de tiempo posee 2 parámetros, GARCH(p,q), el mismo calcula $\sigma_n^2$ desde la más reciente $p$ observación de $u^2$ y la más reciente $q$ estimación de $\sigma_n^2$. Luego, el GARCH(1,1) en concordancia con lo mencionado anteriormente se refiere a la más reciente observación de $u^2$ y la más reciente estimación de $\sigma_n^2$, este modelo es muy usado para la estimación del VaR. La ecuación del modelo GARCH(1,1) es:  
+
+$$\sigma_n^2 = \gamma V_L + \alpha u_{n-1}^2 + \beta \sigma_{n-1}^2$$
+
+dónde:
+
+ $\gamma$   es el peso asignado a $V_L$  
+ 
+ $V_L$ es el promedio de la varianza en el largo plazo  
+ 
+ $\alpha$ es el peso asignado a $u_{n-1}^2$    
+ 
+ $u_{n-1}$ es el cuadrado de los retornos en el período $n-1$      
+ 
+ $\beta$ es el peso asignado a $\sigma_{n-1}^2$  
+ 
+ $\sigma_{n-1}^2$ es la varianza estimada en el período $n-1$  
+ 
+Nótese que:  
+ 
+$$\gamma + \alpha + \beta = 1$$    
+
+observese que el modelo discutido en el apartado anterior es un caso particular de este modelo generalizado el mismo se puede escribir como GARCH(1,1) donde $\gamma=0$, $\alpha= 1 - \lambda$ y $\beta = \lambda$  
+
+Un aspecto muy importante de cálculo paramétrico del VaR es su formulación asociada a la distribución de probabilidad que describa a los retornos ya que dado los parámetros se pueden conseguir su inversa para realizar un proceso de simulación histórica.  Aquí presentamos algunas de las más comunes.
+
+
+##### __VaR Normal:__
+
+Para el cálculo y la determinación del VaR cuya __Bondad de Ajuste__ de como resultado la distribución normal tenemos que :
+
+$X \approx N(0,1)$
+
+Cuya función de densidad es 
+
+$$f(x) = \frac{1}{\sqrt{2 \pi \sigma}} e^-\frac{(x - \mu)^2}{(2 \sigma^2)}$$
+
+donde; 
+
+$\mu$ es igual a la media de la distribución y   
+$\sigma$ es la desviación típica 
+
+luego tenemos la función de distribución acumulada
+
+$$F_{X}(x) = \phi(x) = \mathbb{P}(X \leq x) = \frac{1}{\sqrt{2 \pi \sigma}} = \int_{-\infty}^{x}e^{\frac{-x^2}{2}}$$
+
+entonces utilizamos el principio de la desviación standart
+
+$$Y = \mu + \sigma X$$
+
+
+tenemos entonces que $VaR_{p}(X)$ es el número tal que:
+
+$$
+\begin{array}{rl}
+&\displaystyle \mathbb{P}(Y \leq VaR_{p}(X)) = p\\
+&\displaystyle \Rightarrow \mathbb{P}(\mu + \sigma X \leq VaR_{p}(X)) = p\\
+&\displaystyle \Rightarrow \mathbb{P}(\mu - \mu + \sigma X \leq VaR_{p}(X)- \mu) = p\\
+&\displaystyle \Rightarrow \mathbb{P}(\cancel{\mu} - \cancel{\mu} + \sigma X \leq VaR_{p}(X)- \mu) = p\\
+&\displaystyle \Rightarrow \mathbb{P}(\sigma X \sigma^{-1} \leq (VaR_{p}(X) -\mu) * \sigma^{-1}) = p\\
+&\displaystyle \Rightarrow \mathbb{P}(\cancel{\sigma} X \cancel{\sigma^{-1}} \leq (VaR_{p}(X) -\mu) * \sigma^{-1}) = p\\
+&\displaystyle \Rightarrow \mathbb{P}(X \leq (VaR_{p}(X) -\mu) * \sigma^{-1}) = p\\
+&\displaystyle \Rightarrow \phi((VaR_{p}(X) -\mu) * \sigma^{-1}) = p\\
+&\displaystyle \Rightarrow (VaR_{p}(X) -\mu) * \sigma^{-1} = \phi^{-1}(p)\\
+&\displaystyle \Rightarrow \sigma * {(VaR_{p}(X) -\mu) * \sigma^{-1}} = \sigma * \phi^{-1}(p)\\
+&\displaystyle \Rightarrow \not{\sigma} * {(VaR_{p}(X) -\mu) * \not{\sigma^{-1}}} = \sigma * \phi^{-1}(p)\\
+&\displaystyle \Rightarrow VaR_{p}(X) -\mu = \sigma * \phi^{-1}(p)\\
+&\displaystyle \Rightarrow VaR_{p}(X) -\mu + \mu = \mu + \sigma * \phi^{-1}(p)\\
+&\displaystyle \Rightarrow VaR_{p}(X) -\cancel{\mu} + \cancel{\mu} = \mu + \sigma * \phi^{-1}(p)\\
+&\displaystyle \Rightarrow VaR_{p}(X) = \mu + \sigma * \phi^{-1}(p)
+\end{array}$$
+
+lo que resulta:
+
+$$VaR_p(x)=\mu+\sigma* \phi^{-1}(p)$$
+
+##### __VaR Cauchy:__
+
+Dado que la __Bondad de Ajuste__ de como resultado la distribuyción Cauchy tenemos entonces su función de densidad viene dada por:
+
+$$f(x)= \frac{1}{\pi(1+x^2)}$$
+
+y su función de distribución
+
+$$\begin{array}{rl}
+F_{X}(x) &=\int_{-\infty}^{x} \frac{1}{\pi(1+t^2)}dt\\
+&\displaystyle =\frac{1}{\pi} \left[ \arctan(t) \right] \big |_{t=-\infty}^{t=x}\\
+&\displaystyle =\frac{1}{\not{\pi}} \left[ \frac{\not{\pi}}{2}+ \arctan(x)\right]\\
+&\displaystyle =\left[ \frac{1}{2} + \frac{1}{\pi}\arctan(x)\right]\\
+F_{X}(x) &=\left[ \frac{1}{2} + \frac{1}{\pi}\arctan(x)\right]
+\end{array}$$  
+
+luego asumimos los siguientes parámetros:
+
+$\mu$: como parámetro de locación.
+$\sigma$ como parámetro de escala.
+
+para determinar el VaR aplicamos el principio de la desviación standart
+
+$$\begin{array}{rl}  
+&\displaystyle  \mathbb{P}[\mu + \sigma X \leq VaR_{p}(x)] = p\\
+&\displaystyle  \Rightarrow \mathbb{P}[X \leq \frac{VaR_{p}(x)- \mu}{\sigma}] = p\\
+&\displaystyle  \Rightarrow F_{X}(\frac{VaR_{p}(x)- \mu}{\sigma}) = p\\
+&\displaystyle  \Rightarrow \frac{1}{2} + \frac{1}{\pi}\arctan\left[\frac{VaR_{p}(x) - \mu}{\sigma}\right] = p\\
+&\displaystyle  \Rightarrow \arctan\left[\frac{VaR_{p}(x) - \mu}{\sigma}\right] = \pi(p-\frac{1}{2})\\
+&\displaystyle  \Rightarrow \left[\frac{VaR_{p}(x) - \mu}{\sigma}\right] = \tan\left[\pi(p-\frac{1}{2})\right]\\
+&\displaystyle  \Rightarrow VaR_p(x)=\mu+\sigma*\tan\left[\pi\left(p-\frac{1}{2}\right)\right]
+\end{array}$$
+
+cuyo resultado es:
+
+$$VaR_p(x)=\mu+\sigma*\tan\left[\pi\left(p-\frac{1}{2}\right)\right]$$  
+
+##### __VaR Lognormal:__  
+
+Dado que la __Bondad de Ajuste__ de como resultado la distribución Lognormal tenemos entonces su función de densidad viene dada por:
+
+$$f(X)=\frac{1}{\sigma X} \psi(\frac{\log(X)-\mu}{\sigma})$$  
+
+y su función de distribución:  
+
+$$F(X)=\phi(\frac{\log(X)-\mu}{\sigma})$$  
+
+luego aplicando el principio de la desviación standart y la definición de Valor en Riesgo tenemos que:  
+
+$$Y = \mu + \sigma \log(X)$$  
+
+
+$$\begin{array}{rl}  
+&\displaystyle \mathbb{P}[Y \leq VaR(\log(X))_p]=p\\
+&\displaystyle \Rightarrow \mathbb{P}[\mu + \sigma \log(X) \leq VaR_p(\log(X))] = p\\
+&\displaystyle \Rightarrow \mathbb{P}[\log(X) \leq \frac{VaR_{p}(\log(X))- \mu}{\sigma}] = p\\
+&\displaystyle \Rightarrow F_X(\frac{VaR_{p}(\log(X))- \mu}{\sigma}) = p\\
+&\displaystyle \Rightarrow \frac{VaR_{p}(\log(X))- \mu}{\sigma} = F_X^{-1}(p)=\phi^{-1}(p)\\
+&\displaystyle \Rightarrow VaR_{p}(\log(X))=\phi^{-1}(p) \sigma + \mu\\
+&\displaystyle \Rightarrow VaR_{p}(X)=e^{\phi^{-1}(p) \sigma + \mu}
+\end{array}$$  
+
+
+lo que resulta
+
+$$VaR_{p}(X)=e^{\phi^{-1}(p) \sigma + \mu}$$
+
+##### __VaR Exponencial:__
+
+Sea el VaR perteneciente a una población que se distribuye exponencial tenemos función de densidad dada por:
+
+$$f(X)= \lambda e^{-\lambda X}$$  
+
+ y su función de Distribución:
+ 
+$$F_X(X)= 1-e^{-\lambda X}$$
+
+luego aplicando el principio de la Desviación Standart tenemos que 
+
+$$Y = \mu + \sigma X$$
+
+$\mu$: como parámetro de locación.
+$\sigma$ como parámetro de escala.  
+
+por características matemáticas de la distribución exponencial el parámetro de escala coincide con la unidad cuando el parámetro de locación es igual a 0.
+por tanto:
+
+$$\begin{array}{rl}  
+&\displaystyle \mathbb{P}[Y \leq VaR(X)_p]=p\\
+&\displaystyle \Rightarrow \mathbb{P}[\mu + \sigma X \leq VaR_p(X)] = p\\
+&\displaystyle \Rightarrow \mathbb{P}[0 + 1* X \leq VaR_p(X)] = p\\
+&\displaystyle \Rightarrow F_X(VaR_{p}(X)) = p\\
+&\displaystyle \Rightarrow 1- e^{-\lambda VaR_{p}(X)}=p\\
+&\displaystyle \Rightarrow e^{-\lambda VaR_{p}(X)}= 1-p\\
+&\displaystyle \Rightarrow -\lambda VaR_{p}(X)= \log(1-p)\\
+&\displaystyle \Rightarrow VaR_{p}(X)= -\frac{1}{\lambda}\log(1-p)
+\end{array}$$
+
+lo que resulta:
+
+$$VaR_{p}(X)= -\frac{1}{\lambda}\log(1-p)$$
+
+##### __VaR Uniforme:__ 
+
+función de densidad  
+
+$$f(X)= \frac{1}{b-a}$$   
+
+Función de Distribución  
+
+$$F(X)= \frac{X-a}{b-a}$$  
+
+aplicando la definición del VaR  
+
+$$\begin{array}{rl}  
+&\displaystyle \mathbb{P}[Y \leq VaR(X)_p]=p\\
+&\displaystyle \Rightarrow \mathbb{P}[\mu + \sigma X \leq VaR_p(X)] = p\\
+&\displaystyle \Rightarrow \mathbb{P}[0 + 1* X \leq VaR_p(X)] = p\\
+&\displaystyle \Rightarrow F_X(VaR_{p}(X)) = p\\
+&\displaystyle \Rightarrow \frac{VaR_{p}(X)-a}{b-a}=p\\
+&\displaystyle \Rightarrow VaR_{p}(X)-a=p(b-a)\\
+&\displaystyle \Rightarrow VaR_{p}(X)=a+p(b-a)
+\end{array}$$  
+
+
+por tanto el VaR Uniforme es :  
+
+$$VaR_{p}(X)=a+p(b-a)$$  
+
+
+##### __VaR Weibull:__ 
+
+función de densidad  
+
+$$f(X)= \frac{\alpha x^{\alpha-1}}{\sigma^{\alpha}}e^{-(x/\sigma)^\alpha}$$  
+
+Función de Distribución
+
+$$F(X)= 1-e^{-(x/\sigma)^\alpha}$$
+
+aplicando la definición del VaR
+
+$$\begin{array}{rl}  
+&\displaystyle \mathbb{P}[Y \leq VaR_{p}(X)]=p\\
+&\displaystyle \Rightarrow \mathbb{P}[\mu + \sigma X \leq VaR_p(X)] = p\\
+&\displaystyle \Rightarrow \mathbb{P}[0 + 1* X \leq VaR_p(X)] = p\\
+&\displaystyle \Rightarrow F_X(VaR_{p}(X)) = p\\
+&\displaystyle \Rightarrow 1-e^{-(VaR_{p}(X)/\sigma)^\alpha}=p\\
+&\displaystyle \Rightarrow e^{-(VaR_{p}(X)/\sigma)^\alpha}=1-p\\
+&\displaystyle \Rightarrow -(VaR_{p}(X)/\sigma)^\alpha=\log(1-p)\\
+&\displaystyle \Rightarrow (VaR_{p}(X)/\sigma)^\alpha=-\log(1-p)\\
+&\displaystyle \Rightarrow (VaR_{p}(X)/\sigma)=[-\log(1-p)]^{1/\alpha}\\
+&\displaystyle \Rightarrow VaR_{p}(X)=\sigma [-\log(1-p)]^{1/\alpha}\\
+\end{array}$$  
+
+por tanto el VaR Weibull es:  
+
+
+$$VaR_{p}(X)=\sigma [-\log(1-p)]^{1/\alpha}$$  
+
+
+
+adicionalmente mostramos la formulación del __TVaR__  
+ 
+ 
+#### VaR de Cola (TVaR)      
+
+Sea $X$ una Variable Aleatoria de Pérdida, el Tail-Value-at-Risk __TVaR__ de $X$ al nivel de certeza del $p$% se denota $TVaR_{p}(X)$ y es la pérdida esperada dado que la misma excede el $p$ Percentil de la Distribución de Pérdida Asociado a $X$. El mismo se puede escribir:   
+
+$$TVaR_p(X)=\mathbb{E}(X|X>x_p)=\frac{\int_{x_p}^{\infty}xdF(x)}{1-F(x_p)}$$
+$$TVaR_p(X)=\frac{\int_{x_p}^{\infty}xf(x)dx}{1-F(x_p)}=\frac{\int_{1}^{p}VaR_u(X)du}{1-p}$$  
+
+De esta manera se obtiene la forma genérica del __TVaR__. A continuación se presenta la formulación por cada tipo de Distribución de Probabilidad.
+
+La forma de obtener el TVaR depende de la familia de distribución al que pertenezca la población evaluada que es la misma distribución a través de la cual es asociado el cálculo del VaR.
+
+Una de las formas viene dada si dicha distribución pertenece a la Familia de __Distribuciones Elípticas__, las mismas están definidas como el conjunto de distribuciones cuyo contorno de sus versiones multivariantes tiene forma de elipse. La versión univariante corresponde a la marginal de estas. Por ejemplo, la Normal y la T Student son elípticas, en cambio la distribución exponencial no lo es.
+
+Una de las características deseables de esta familia de distribuciones probabilísticas es que tiene soporte real, es decir tienen soporte tanto positivo como negativo, a pesar que las distribuciones que poseen esta caraterística no son usadas frecuentemente en modelaje de pérdidas, podrían ser usadas en el modelaje y caracterización de variables aleatorias tales como la tasa de retorno, tasas de rendimiento ya que toman valores positivos y negativos además las mismas también son utilizadas en el campo de las finanzas y de la administración de riesgo.
+
+Por definición la función de densidad puede ser escrita de la siguiente manera:  
+
+$$f(x)=\frac{c}{\sigma}g\left[\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right]$$  
+
+donde:
+
+$g(x)$ es una función tal que $\int_{0}^{\infty}g(x)dx < \infty$    
+$G(x)=c\int_{0}^{x}g(y)dy$ y $\bar{G}(x)=G(\infty)-G(x)$  
+$F(x)=\int_{-\infty}^{x}f(y)dy$ y $\bar{F}(x)=1-F(x)$
+
+### Teorema  
+
+Considere cualquier distribución elíptica univariante, con media y varianza finita. Entonces el $TVaR$ a nivel de confianza $p$ del $VaR_p(X)$, donde $p > 1/2$ se puede escribir como:  
+
+$$TVaR_p(X)=\mu + \lambda \sigma^2$$  
+
+donde: 
+
+$$\lambda=\frac{\frac{1}{\sigma}\bar{G} \left[ \frac{1}{2} \left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right]}{\bar{F}(VaR_p(x))}$$  
+
+### Demostración  
+
+Por la definición de $TVaR$  
+
+$$\begin{array}{rl} 
+ TVaR_p(X) &\displaystyle =\frac{1}{\bar{F}(VaR_p(x))} \int_{VaR_p(x)}^{\infty}x.f(x) dx\\
+ &\displaystyle =\frac{1}{\bar{F}(VaR_p(x))} \int_{VaR_p(x)}^{\infty}x.\frac{c}{\sigma}g\left[\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right]dx\\
+\end{array}$$
+
+hacemos  $z=(VaR_p(x)- \mu)/\sigma$  
+
+$$\begin{array}{rl} 
+TVaR_p(X) &\displaystyle =\frac{1}{\bar{F}(VaR_p(x))} \int_{\frac{VaR_p(x)-\mu}{\sigma}}^{\infty}(\mu + \sigma z).c.g\left(\frac{1}{2}z^2\right)dz dx\\
+&\displaystyle =\mu + \frac{cq}{\bar{F}(VaR_p(x))}\int_{\frac{VaR_p(x)-\mu}{\sigma}}^{\infty}z.g\left((\frac{1}{2}z^2\right)dz\\  
+&\displaystyle = \mu + \lambda \sigma^2
+\end{array}$$   
+
+devolviendo el cambio y agrupando convenientemente
+
+$$\begin{array}{rl}
+\lambda &\displaystyle =\frac{c}{\sigma \bar{F}(VaR_p(x))} \int_{\frac{1}{2}(\frac{VaR_p(x)-\mu}{\sigma})^2}^{\infty} g(u) du\\
+&\displaystyle =\frac{1}{\sigma \bar{F}(VaR_p(x))}\bar{G} \left[\frac{1}{2} \left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right]
+\end{array}$$  
+
+
+##### __TVaR Logistica:__  
+
+La  distribución logística tiene una densidad de la forma:  
+
+$$f(x)=\frac{c}{\sigma}g\left[\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right]$$   
+
+donde  
+
+$$g(u)= \frac{\exp(-\mu)}{(1+ \exp(-\mu))^2}$$ 
+
+y $c=1/2$. Entonces 
+
+$$\begin{array}{rl}
+G(x) &\displaystyle=\frac{1}{2}\int_{0}^{x}g(u)du\\
+&\displaystyle=\frac{1}{2}\int_{0}^{x}\frac{\exp(-\mu)}{(1+ \exp(-\mu))^2}du\\
+&\displaystyle=\frac{1}{2}\left[\frac{1}{1+\exp(-x)-\frac{1}{2}}\right]
+\end{array}$$  
+
+$$\begin{array}{rl}
+\frac{1}{\sigma} \bar{G}\left[\frac{1}{2}\left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right] &\displaystyle= \frac{1}{2 \sigma} \left[1-\frac{1}{1+ \exp\left[-\frac{1}{2}\left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right]}\right]\\
+&\displaystyle
+= \frac{1}{2 \sigma}\frac{\exp\left[-\frac{1}{2} \left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right]}{1+ \exp \left[-\frac{1}{2} \left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right]}\\
+&\displaystyle= \frac{1}{2} \frac{ \frac{1}{\sigma}\phi\left(\frac{VaR_p(x)-\mu}{\sigma}\right)}{\frac{1}{\sqrt{2\pi}+\phi\left(\frac{VaR_p(x)-\mu}{\sigma}\right)}}
+\end{array}$$
+
+luego aplicando la solución de las distribuciones elípticas para el cáculo del TVaR tenemos que:  
+
+$$TVaR_p(x)= \mu + \lambda \sigma^2$$
+
+donde
+
+$$h=\frac{1}{\sigma \bar{F}(VaR_p(x))}\bar{G} \left[\frac{1}{2} \left(\frac{VaR_p(x)-\mu}{\sigma}\right)^2\right]$$
+
+lo que resulta:
+
+$$TVaR_p(x)= \mu + \frac{1}{2} \left[\frac{ \frac{1}{\sigma}\phi\left(\frac{VaR_p(x)-\mu}{\sigma}\right)}{\frac{1}{\sqrt{2\pi}+\phi\left(\frac{VaR_p(x)-\mu}{\sigma}\right)}}\frac{ \frac{1}{\sigma}\phi\left(\frac{VaR_p(x)-\mu}{\sigma}\right)}{\bar{F}(\frac{VaR_p(x)-\mu}{\sigma})} \right]$$  
+
+Otra forma de calcular el TVaR consiste en utilizar una generalización de la distribución normal, pero solo extendiendolo a las variables aleatorias que tenga soporte positivo unicamente. Dicha generalización considera la familia exponencial cuyos modelos de dispersión son __Familia Exponencial de Dispersión Aditiva__  y __Familia Exponencial de Dispersión Reproductiva__, ( __AEDF__ ) y ( __REDF__ ) por sus siglas en inglés. la definición de ambas familias de distribuciones de probabilidad es la misma con excepción del rol que juega el inverso del parámetro de dispersión $\lambda$.  
+
+### Definición  
+
+Una Variable Aleatoria X tiene una distribución que viene de una __Familia Exponencial de Dispersión Aditiva__  y __Familia Exponencial de Dispersión Reproductiva__ respectivamente, si su función de densidad se puede escribir en términos de los parametros $\theta$ y $\lambda$ con la siguiente forma:  
+
+AEDF
+$$f(x;\theta, \lambda)=e^{\theta x-\lambda k(\theta)}q(x;\lambda)$$  
+
+REDF
+$$f(x;\theta, \lambda)=e^{\lambda[\theta x- k(\theta)]}q(x;\lambda)$$  
+
+La media y la varianza de estas distribuciones son:  
+
+Media:
+
+AEDF $\mu = \lambda k'(\theta)$
+REDF $\mu=k'(\theta)$  
+
+Varianza:
+
+AEDF $Var(X) = \lambda k''(\theta)=k''(\theta)/\sigma^2$
+REDF $Var(X) = k''(\theta)/\lambda=k''(\theta)\sigma^2$    
+
+donde 
+
+$1/\lambda = \sigma^2$ es llamado el parámetro de dispersión.  
+
+### Teorema  
+
+sea $X$ una variable aleatoria cuya distribución proviene de una __AEDF__. entonces $TVaR_p(X)$ se puede escribir como:  
+
+$$TVaR_p(X)=\mu + h$$  
+
+donde   
+
+$h=\frac{\partial}{\partial \theta}\ln[\bar{F}(VaR_p;\theta,\lambda)]$  
+
+### Demostración  
+
+$$\begin{array}{rl}
+\frac{\partial}{\partial \theta}\ln[\bar{F}(VaR_p;\theta,\lambda)] &\displaystyle= \frac{1}{\bar{F}(VaR_p(x);\theta,\lambda)} \int_{VaR_p(x)}^{\infty} \frac{\partial}{\partial \theta}e^{[\theta x - \lambda k(\theta)]}q(x;\lambda)dx\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p(x);\theta,\lambda)} \int_{VaR_p(x)}^{\infty} \left[[x- \lambda k'(\theta)]e^{\lambda[\theta x - k(\theta)]}q(x;\lambda)\right]dx\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p(x);\theta,\lambda)} \int_{VaR_p(x)}^{\infty} xf(x;\theta,\lambda)dx - \lambda k'(\theta)\\
+\frac{\partial}{\partial \theta}\ln[\bar{F}(VaR_p;\theta,\lambda)] &\displaystyle= TVaR_p(x) - \mu
+\end{array}$$
+
+##### __TVaR Gamma:__  
+
+Se puede demostrar que la distribución Gamma pertenece a la __Familia Exponencial de Dispersión Aditiva__  si observamos la densidad tenemos
+
+$$f(x)=\frac{1}{x \Gamma(\alpha)} \left(\frac{x}{\beta}\right)^{\alpha} \exp \left(-\frac{x}{\beta}\right)$$  
+donde 
+
+$\theta=-\frac{1}{\beta}$
+$\lambda=\alpha$  
+$k(\theta) = -\ln(-\theta)$
+$q(x;\lambda)=\frac{x^{\alpha-1}}{\Gamma(\alpha)}$  
+
+lo que satisface las condiciones del teorema de AEDF.
+
+luego el $TVaR_p(x)$ se calcula como:
+
+$$TVaR_p(X)= \mu + h$$  
+
+donde   
+
+$$\begin{array}{rl}
+h &\displaystyle=\frac{\partial}{\partial \theta}\ln[\bar{F}(VaR_p;\theta,\lambda)]\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)} \frac{\partial}{\partial \theta} \int_{VaR_p(x)}^{\infty} \frac{x^{\lambda-1}}{\Gamma(\lambda)} e^{[\theta x -\lambda \ln(-\theta)]}dx\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)}  \int_{VaR_p(x)}^{\infty} \frac{x^{\lambda-1}}{\Gamma(\lambda)} \frac{\partial}{\partial \theta}e^{[\theta x -\lambda \ln(-\theta)]}dx\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)}  \int_{VaR_p(x)}^{\infty} \frac{x^{\lambda-1}}{\Gamma(\lambda)} \left(x + \frac{\lambda}{\theta}\right)e^[\theta x -\lambda \ln(-\theta)]dx\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)} \left[-\frac{1}{\theta} \frac{\Gamma(\lambda + 1)}{\Gamma(\lambda)} \int_{VaR_p(x)}^{\infty} f(x;\theta, \lambda + 1) dx \right] + \frac{\lambda}{\theta}\\
+&\displaystyle= -\frac{\lambda}{\theta} \left[\frac{\bar{F}(VaR_p;\theta,\lambda+1)}{\bar{F}(VaR_p;\theta,\lambda)} - 1\right]\\
+&\displaystyle= \mu \left[\frac{\bar{F}(VaR_p;\theta,\lambda+1)}{\bar{F}(VaR_p;\theta,\lambda)} - 1\right]
+\end{array}$$
+
+luego el resultado es:
+
+$$\begin{array}{rl}
+TVaR_p(X) &\displaystyle= \mu + \mu \left[\frac{\bar{F}(VaR_p;\theta,\lambda+1)}{\bar{F}(VaR_p;\theta,\lambda)} - 1\right]\\
+&\displaystyle= \mu + \mu \left[\frac{\bar{F}(VaR_p;\theta,\lambda+1)}{\bar{F}(VaR_p;\theta,\lambda)} \right]-\mu\\
+&\displaystyle= \cancel{\mu} + \mu \left[\frac{\bar{F}(VaR_p;\theta,\lambda+1)}{\bar{F}(VaR_p;\theta,\lambda)} \right]-\cancel{\mu}\\
+&\displaystyle=\mu \left[\frac{\bar{F}(VaR_p;\theta,\lambda+1)}{\bar{F}(VaR_p;\theta,\lambda)} \right]
+\end{array}$$  
+
+### Teorema
+sea $X$ una variable aleatoria cuya distribución proviene de una __REDF__. entonces $TVaR_p(X)$ se puede escribir como: 
+
+$$TVaR_p(X)= \mu + h \sigma^2$$  
+
+donde
+
+$\sigma^2 = \frac{1}{\lambda}$ y   
+$$h=\frac{\partial}{\partial \theta}ln[\bar{F}(VaR_p; \theta, \lambda)]$$  
+
+### Demostración  
+
+$$\begin{array}{rl}
+\frac{\partial}{\partial \theta}ln[\bar{F}(VaR_p; \theta, \lambda)] &\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)}  \int_{VaR_p(x)}^{\infty}\frac{\partial}{\partial \theta} \left[e^{\lambda[\theta x - k(\theta)]} q(x;\lambda)\right]dx \\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)}  \int_{VaR_p(x)}^{\infty} \left[\lambda[x - k'(\theta)]e^{\lambda[\theta x - k(\theta)]} q(x;\lambda)\right]dx\\
+&\displaystyle= \frac{1}{\bar{F}(VaR_p;\theta,\lambda)} \int_{VaR_p(x)}^{\infty} x f(x;\theta , \lambda)dx - \lambda k'(\theta)\\
+&\displaystyle= \lambda [ TVaR_p(X) - \mu ]\\
+&\displaystyle= [ TVaR_p(X) - \mu]/  \sigma^2
+\end{array}$$
+
+##### __TVaR Normal:__  
+
+se puede demostra que la distribución normal  es miembro de la __Familia Exponencial de Dispersión Reproductiva__ ya que si observamos su densidad  
+
+$$f(x)=\frac{1}{\sqrt{2 \pi}\sigma} e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2}$$  
+
+la misma puede ser reexpresada como:  
+
+$$f(x)=\frac{1}{\sqrt{2 \pi}\sigma} e^{-\frac{1}{2}\left(\frac{x}{\sigma}\right)^2}e^{-\frac{1}{\sigma^2}\left(\mu x -\frac{1}{2} \mu ^2\right)}$$  
+
+donde 
+
+$\lambda = \frac{1}{\sigma^2}$  
+$k(\theta)= \frac{\theta^2}{2}$ y   
+
+$$q(x; \lambda) = \frac{1}{\sqrt{2 \pi}\sigma}e^{-\frac{1}{2}\left(\frac{x}{\sigma}\right)^2}$$  
+
+
+luego el $TVaR_p(X)$ es  
+
+$$TVaR_p(X)= \mu + h \sigma^2$$  
+
+donde   
+
+$\sigma^2= \frac{1}{\lambda}$ y 
+
+$$\begin{array}{rl}
+h &\displaystyle =\frac{\partial}{\partial \theta}ln[\bar{F}(VaR_p; \theta, \lambda)]\\
+&\displaystyle =\frac{\partial}{\partial \theta}ln(1-\Theta[\sqrt{\lambda}(VaR_p(x)-\theta)])\\
+&\displaystyle = \frac{\sqrt{\lambda \phi[\sqrt{\lambda}(VaR_p(x)-\theta)]}}{1-\Theta[\sqrt{\lambda}(VaR_p(x)- \theta)]}
+\end{array}$$
+
+lo que resulta:
+
+$$TVaR_p(X) = \mu + \frac{1}{\sigma} \frac{\phi[\sqrt{\lambda}(VaR_p(x)- \theta)]}{1-\Theta[\sqrt(\lambda)(VaR_p(x)- \theta)]} \sigma^2$$
+
+a continuación presentamos algunos resultados de los $TVaR$ para algunas distribuciones notables
+
+
+##### __TVaR Cauchy:__  
+
+$$TVaR_p(X)=\mu+\frac{\sigma}{p}\int_{0}^{p}tan\left(\pi\left(v-\frac{1}{2}\right)\right)dv$$
+         
+##### __TVar Lognormal:__  
+
+$$TVaR_p(X)=\frac{e^{\mu}}{p}\int_{0}^{p}e^{\sigma\Phi^{-1}(v)}dv$$
+
+   
+##### __TVaR Exponencial:__  
+
+$$TVaR_p(X) = -\frac{1}{p\lambda}\left[log(1-p)p-p-log(1-p)\right]$$
+
+##### __TVaR Uniforme:__  
+
+$$TVaR_p(X) = a+\frac{p}{2}(b-a)$$  
+
+##### __TVaR Weibull:__  
+
+$$TVaR_p(X) = \frac{\sigma}{p}\gamma[1+\frac{1}{\alpha}, -log(1-p)]$$  
+
+##### __TVaR F:__  
+
+$$TVaR_p(X) = \mu + \int_{0}^{p}F^{-1}(v)\sigma dv$$  
+
+##### __TVaR T student:__  
+
+$$TVaR_p(X) = \mu + \int_{0}^{p}T^{-1}(v)\sigma dv$$  
+
+### R Y el Paquete __VaRES__
+
+El Paquete de R denominado __VaRES__, calcula los Valores a Riesgo ( __VaR__) y la Expectativa a Corto Plazo ( __ES__), que constituyen dos de las medidas más populares del Riesgo Financiero para más de 100 (cien) distribuciones paramétricas, incluyendo todas las comúnmente conocidas.
+
