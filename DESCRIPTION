@@ -3,7 +3,7 @@ Title: Plantillas de Trabajo Synergy Vision
 Version: 0.0.0.9000
 Authors@R: person("Danny", "Morales", email = "dm@synergy.vision", role = c("aut", "cre"))
 Description: El paquete contiene plantilla para la realización de Notas Técnicas Metodológicas de Riesgo.
-Depends: R (>= 3.4.1)
+Depends: R (>= 3.4.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
