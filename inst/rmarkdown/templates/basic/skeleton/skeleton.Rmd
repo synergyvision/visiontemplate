@@ -1,9 +1,9 @@
 ---
-headleft: PORTADA #logotipo o texto extremo superior izquierdo del documento
-headright: DERECHA #logotipo o texto extremo superior derecho del documento
+headleft: '`r system.file("rmarkdown", "templates", "basic", "resources","vision.png", package = "visiontemplate")`' #logotipo o texto extremo superior izquierdo del documento
+headright: '`r system.file("rmarkdown", "templates", "basic", "resources","visionrisk.png", package = "visiontemplate")`' #logotipo o texto extremo superior derecho del documento
 footleft: "Nota Técnica Metodológica" #logotipo o texto extremo inferior izquierdo del documento
-headtitle: PORTADA #imagen de la portada
-centertitle: CENTRO # imagen central de la portada
+headtitle: '`r system.file("rmarkdown", "templates", "basic", "resources","vision-white.png", package = "visiontemplate")`' #imagen de la portada
+centertitle: '`r system.file("rmarkdown", "templates", "basic", "resources","visionrisk-white.png", package = "visiontemplate")`' # imagen central de la portada
 subtituloportada: "Sistema de Alerta Temprana" 
 tituloportada: "Indicadores de Riesgo"
 output: visiontemplate::basic
