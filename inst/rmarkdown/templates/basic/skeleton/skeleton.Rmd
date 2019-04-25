@@ -1,5 +1,5 @@
 ---
-graphicspath: /Users/dmorales/Documents/Vision/VisionTemplate/inst/rmarkdown/templates/basic/resources/ #coloque la ruta del directorio donde tiene las imagenes
+graphicspath: /Users/dmorales/Documents/Vision/visiontemplate/inst/rmarkdown/templates/basic/resources/ #coloque la ruta del directorio donde tiene las imagenes
 headleft: vision.png #logotipo o texto extremo superior izquierdo del documento
 headright: visionrisk.png #logotipo o texto extremo superior derecho del documento
 footleft: "Nota Técnica Metodológica" #logotipo o texto extremo inferior izquierdo del documento
@@ -7,7 +7,7 @@ headtitle: vision-white.png #imagen de la portada
 centertitle: visionrisk-white.png # imagen central de la portada
 subtituloportada: "Sistema de Alerta Temprana" 
 tituloportada: "Indicadores de Riesgo"
-output: VisionTemplate::basic
+output: visiontemplate::basic
 ---
 
 # Especificaciones Técnicas
